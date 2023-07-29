@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-const Stocks = require('./stock');
+
 
 const agenceSchema = new mongoose.Schema({
     name: {

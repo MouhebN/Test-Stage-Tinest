@@ -1,6 +1,5 @@
 const mongoose = require('mongoose');
-const Agence = require('./agence');
-const Livreur = require('./livreur');
+
 
 const stockSchema = new mongoose.Schema({
     colis: [
@@ -21,7 +20,7 @@ const stockSchema = new mongoose.Schema({
             status: {
                 type: String,
                 enum: ['en attente', 'en stock', 'en cours','retour en stock','payé','en pickup',
-                    'annulé'],
+                    'annulé','retour au fournisseur'],
                 required: true
             },
             retourCount: {

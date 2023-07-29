@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-const Agence = require('./agence');
+
 
 const fournisseurSchema = new mongoose.Schema({
     nom: {

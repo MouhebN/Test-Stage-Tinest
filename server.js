@@ -1,11 +1,7 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
-const ColisModel = require ('./Models/colis');
-const FournisseurModel = require ('./Models/fournisseur');
-const LivreurModel = require ('./Models/livreur');
-const MagasinierModel = require ('./Models/magasinier');
-const StockModel = require ('./Models/stock');
+
 
 const app = express();
 const port = 3000;
@@ -19,6 +15,11 @@ app.use('', agenceRoute);
 const magasinierRoute = require('./Routes/magasinier.js');
 app.use('', magasinierRoute);
 
+const livreurRoute = require('./Routes/livreur.js');
+app.use('', livreurRoute);
+
+const stockRoute = require('./Routes/stock.js');
+app.use('', stockRoute);
 
 
 

@@ -1,6 +1,6 @@
 const express = require('express');
 const colisController = require("../Controllers/colisController");
-const livreurController = require("../Controllers/livreurController");
+const stockController = require("../Controllers/stockController");
 const router = express.Router();
 
 router.post('/ajouterColis' ,colisController.ajouterColis);
@@ -14,6 +14,9 @@ router.post('/retournerColis',colisController.retourColisAuStock);
 router.get('/getStockColis' ,colisController.getAllColisFromStock);
 router.get('/getLivreur/:id' ,colisController.getLivreur);
 router.get('/getMultipleLivreur' ,colisController.getMultipleLivreur);
+router.get('/getAllColisEnStock' ,colisController.getAllColisEnStock);
+
+
 
 
 

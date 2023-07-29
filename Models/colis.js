@@ -1,6 +1,4 @@
 const mongoose = require('mongoose');
-const Fournisseur = require('./fournisseur');
-const Livreur = require('./livreur');
 const colisSchema = new mongoose.Schema(
     {
         fournisseur: {
@@ -28,7 +26,7 @@ const colisSchema = new mongoose.Schema(
         status: {
             type: String,
             enum: ['en attente', 'en stock', 'en cours','retour en stock','payé','en pickup',
-                'annulé'],
+                'annulé','retour au fournisseur'],
             required: false
         },
         retourCount: {
@@ -64,7 +62,12 @@ const colisSchema = new mongoose.Schema(
             {
                 type: String,
                 required: false
-            }
+            },
+        stock: {
+            type: mongoose.Schema.Types.ObjectId,
+            ref: 'Stock',
+            required: false,
+        },
     }
 )
 
